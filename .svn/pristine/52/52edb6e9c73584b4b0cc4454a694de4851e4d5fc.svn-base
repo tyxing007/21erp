@@ -1,0 +1,56 @@
+<#include "../../inc/layout.html">
+<@layout title="组织机构" js="sso/position/index.js">
+<div class="wrapper" ms-controller="create">
+    <div class="mod-search cf">
+        <div class="fl">
+            <ul class="ul-inline">
+
+                <li class="row-item" ms-if="showMenu('A12_1_S')">
+                    <div class="ctn-wrap">
+                        <label for="">请选择要显示的公司</label>
+                        <select ms-duplex="query.companyId" ms-change="reload()" class="ui-input" style="width: auto">
+                            <option ms-repeat="companyList" ms-value="el.id">{{el.name}}</option>
+                        </select>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="fr">
+
+            <a class="ui-btn ui-btn-sp mrb" rel="pageTab" tabid="setting-company" id="addCompany" href="${root!}/sso/company" ms-if="showMenu('A12_1_S')"><i
+                    class="fa fa-company"></i>新增公司</a>
+            <a class="ui-btn ui-btn-sp mrb" id="addDepartment" title="新增部门"><i class="fa fa-plus"></i>新增部门</a>
+            <a class="ui-btn mrb" id="addPosition" title="新增岗位"><i class="fa fa-plus"></i>新增岗位</a>
+            <a class="ui-btn" rel="pageTab" tabid="setting-user" href="${root!}/sso/user"><i
+                    class="fa fa-user"></i>用户</a>
+        </div>
+    </div>
+
+
+    <div class="grid-wrap">
+        <table id="grid">
+        </table>
+        <div id="page"></div>
+    </div>
+
+    <!--<div class="container-fluid">-->
+    <!--<div class="row-fluid">-->
+    <!--<div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">-->
+    <!--<div id="depatTree">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-9 col-xs-9 col-sm-9 col-lg-9">-->
+    <!--<div class="grid-wrap">-->
+    <!--<table id="grid">-->
+    <!--</table>-->
+    <!--<div id="page"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+</div>
+
+
+</div>
+</@layout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/net/loyin/ctrl/app/MerchCtrl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/net/loyin/ctrl/app/OrderCtrl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/net/loyin/netService/NetServiceInit.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/net/loyin/netService/netPool/NetConnPool.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/net/loyin/netService/netPool/NetThreadPool.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/net/loyin/netService/vo/customerVo/customerInfoVo/CustomerVo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/net/loyin/test/sortCj.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/app/scm/storageBill/addProduct.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/app/scm/storageBill/addProduct.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/app/scm/storageBill/printOutStorage.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/app/scm/storageBill/printOutStorage.js" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

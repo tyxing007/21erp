@@ -1,0 +1,15 @@
+<#include "../../inc/layout.html">
+<@layout title="出库入库" js="scm/storageBill/addProduct.js">
+<div class="manage-wrapper" ms-controller="ctrl" style="overflow: scroll;overflow-x: hidden;height: 100%;width:99%">
+    <div id="dialogDiv" style="text-align: center;padding-top: 24px">
+        <input style="width:60%" type="text" id="productId" hidden/>
+        <label style="width:30%">产品名称:</label><input style="width:60%" type="text" id="productName" readonly/><br>
+        <label style="width:30%">国际条形码:</label><input style="width:60%" type="text" id="barCode" readonly/><br>
+        <input style="width:60%" type="text" id="unit" hidden/>
+        <label style="width:30%">历史价格:</label><input style="width:60%" type="text" id="his_price" readonly/><br>
+        <label style="width:30%">建议价格:</label><input style="width:60%" type="text" id="sale_price" readonly/><br>
+        <label style="width:30%">当前价格:</label><input style="width:60%" type="text" id="price"/><br>
+        <label style="width:30%">当前数量:</label><input style="width:60%" type="text" id="num"/><br>
+    </div>
+</div>
+</@layout>

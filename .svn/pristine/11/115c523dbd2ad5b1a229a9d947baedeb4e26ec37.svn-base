@@ -1,0 +1,37 @@
+package net.loyin.netService.vo.customerVo.customerInfoVo;
+
+import net.loyin.netService.domain.CommonMessageVO;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * Created by Chao on 2015/11/10.
+ */
+@XmlRootElement(name = "data")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class CustomerReturnVo extends CommonMessageVO {
+    @XmlElement(name = "main_message")
+    private CustomerReturnMainData maindata;
+
+    @Override
+    public boolean validate(boolean isReqAudit) {
+        return false;
+    }
+
+    @Override
+    public String validate() {
+        return null;
+    }
+
+    @Override
+    public CustomerReturnMainData getMaindata() {
+        return maindata;
+    }
+
+    public void setMaindata(CustomerReturnMainData maindata) {
+        this.maindata = maindata;
+    }
+}

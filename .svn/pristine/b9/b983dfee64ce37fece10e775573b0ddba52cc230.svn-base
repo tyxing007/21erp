@@ -1,0 +1,141 @@
+<#include "../../inc/layout.html">
+<@layout title="出库入库打印" js="scm/storageBill/printStorage.js">
+<style>
+    body {
+        background: #fff;
+    }
+
+    .table1 td {
+        padding: 2px;
+    }
+</style>
+<div class="manage-wrap" hidden >
+    <div ms-controller="print" ms-repeat-size="productPageSize">
+        <p style="text-align: center;" ms-if="pageIndex($index)">
+    <span style="font-size: 24px;">{{data.companyName}}{{billType[type]}}拣货单
+ &nbsp; </span>&nbsp;
+        </p>
+    <table border="0">
+        <tbody>
+        <tr class="firstRow">
+            <td width="273" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                公司:{{data.companyName}}&nbsp;
+            </td>
+            <td width="273" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                联系电话:{{data.phone}}
+            </td>
+            <td width="273" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                地址：{{data.address}}
+            </td>
+        </tr>
+        <tr>
+            <td width="273" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                负责人:{{data.head_id}}
+            </td>
+            <td width="273" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                配货员: {{data.user_id}}
+            </td>
+            <td width="273" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                送货员/司机：&nbsp;
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table border="0" ms-if="!(type==2||type==3||type==6||type==7)">
+        <tbody>
+        <tr class="firstRow">
+            <td width="492" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+            订单编号:{{data.order_id}}
+        </td>
+            <td width="492" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                订单金额:￥{{data.order_amt|money}}
+            </td>
+            <td width="492" valign="top" style="font-size: 10px;font-size: 10px;word-break: break-all;">
+                {{type<2?'供应商':'网点'}}:{{data.customer＿dname}}
+            </td>
+        </tr>
+        <tr>
+            <td width="492" valign="top" style="font-size: 10px;word-break: break-all;">
+                客户名称:{{data.customer＿name}}
+            </td>
+            <td width="492" valign="top" style="font-size: 10px;word-break: break-all;">
+                联系号码:{{data.customer_phone}};
+            </td>
+            <td width="492" valign="top" style="font-size: 10px;word-break: break-all;">
+                业务员:{{data.head_id}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" width="492" valign="top" style="font-size: 10px;word-break: break-all;">
+                配送地址:{{data.customer_address}}
+            </td>
+            <td width="492" valign="top" style="font-size: 10px;word-break: break-all;">
+                配送日期:{{data.customer_date}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table border="3" width="100%">
+        <thead>
+        <tr>
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                商品名称
+            </td>
+            <td width="14%" style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                条形码
+            </td>
+            <#--<th style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 2px solid;border: 2px solid; width: 90px">-->
+                <#--商品品牌-->
+            <#--</th>-->
+            <td width="16%" style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                商品分类
+            </td>
+            <td width="6%"  style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                价格
+            </td>
+            <td width="6%" style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                单位
+            </td>
+            <td width="6%" style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                数量
+            </td>
+            <td width="9%" style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                备注
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ms-repeat="data.productListAll[$index]">
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                {{el.product_name}}
+            </td>
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                {{el.product_barcode}}
+            </td>
+        <#--<td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 2px solid;border: 2px solid;">-->
+        <#--{{el.brand}}-->
+        <#--</td>-->
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                {{el.categorychina}}
+            </td>
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                {{el.sale_price}}
+            </td>
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                {{el.unitChina}}
+            </td>
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                {{el.unit}}
+            </td>
+            <td style="padding-left:0px;padding-top:0px;font-size: 10px;word-break: break-all;border: 1px solid;">
+                {{el.remark}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+        <p ms-if="!$last" style="page-break-after: always;"></p>
+    </div>
+</div>
+<script id="container" name="content" type="text/plain" style="width:100%;height:100%">
+</script>
+</@layout>

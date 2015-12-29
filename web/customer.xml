@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- 网店列表请求-->
+<data>
+    <head_message>
+        <message_no>String</message_no><!-- 序号-->
+        <app_no>String</app_no><!-- APP版本号-->
+        <data_no>String</data_no><!-- 数据结构版本号-->
+        <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+        <business_code>String</business_code><!-- 业务编号-->
+    </head_message>
+    <main_message>
+        <search_key></search_key><!-- 搜索关键字-->
+        <seacrch_type></seacrch_type>
+        <seacrch_sort></seacrch_sort>
+        <seacrch_status></seacrch_status>
+        <page_size></page_size>
+        <page_num></page_num>
+    </main_message>
+</data>
+
+<!--   网店列表 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <customer_info>
+        <customer> <!-- 可自行创建，有多个时创建多个 -->
+            <customer_id></customer_id>
+            <customer_name></customer_name>
+            <customer_phone></customer_phone>
+            <customer_address></customer_address>
+        </customer>
+    </customer_info>
+</main_message>
+</data>
+
+
+
+        <!-- 网店详情请求 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <customer_id></customer_id>
+</main_message>
+</data>
+
+
+<!-- 网店详情-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <customer_type></customer_type><!-- 网店类型-->
+    <customer_name></customer_name><!-- 网店名称-->
+    <customer_contacts></customer_contacts><!-- 联系人-->
+    <contacts_phone></contacts_phone><!-- 联系人手机-->
+    <contacts_fax></contacts_fax><!-- 联系人传真-->
+    <customer_address></customer_address><!-- 网店地址-->
+    <customer_lng></customer_lng><!-- 网店经度-->
+    <customer_lat></customer_lat><!-- 网店维度-->
+    <customer_pic></customer_pic><!-- 网店图片-->
+</main_message>
+</data>
+
+
+
+        <!-- 网店新增请求 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <customer_type></customer_type><!-- 网店类型-->
+    <customer_name></customer_name><!-- 网店名称-->
+    <customer_contacts></customer_contacts><!-- 联系人-->
+    <contacts_phone></contacts_phone><!-- 联系人手机-->
+    <contacts_fax></contacts_fax><!-- 联系人传真-->
+    <customer_address></customer_address><!-- 网店地址-->
+    <customer_lng></customer_lng><!-- 网店经度-->
+    <customer_lat></customer_lat><!-- 网店维度-->
+</main_message>
+</data>
+
+        <!--   网店新增返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <customer_id></customer_id>
+</main_message>
+</data>
+
+
+<delete>
+        <!--   网店上传图片返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <customer_id></customer_id>
+    <pic></pic>
+</main_message>
+</data>
+
+        <!--   网店保存成功返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+</main_message>
+</data>
+
+</delete>
+
+
+
+
+        <!-- 网店拜访记录列表请求-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <search_key></search_key><!-- 搜索关键字-->
+    <page_size></page_size>
+    <page_num></page_num>
+</main_message>
+</data>
+
+
+
+
+        <!-- 网店拜访记录列表请求返回-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <visits_list>
+        <customer_visit_id></customer_visit_id>
+        <customer_name></customer_name>
+        <customer_visit_time></customer_visit_time>
+    </visits_list>
+</main_message>
+</data>
+
+
+
+

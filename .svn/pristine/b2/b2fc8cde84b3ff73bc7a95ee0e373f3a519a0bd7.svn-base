@@ -1,0 +1,64 @@
+<#include "../../inc/layout.html">
+<@layout title="订单" js="scm/order/checkProduct.js">
+<link rel="stylesheet" href="/assets/css/jqui/jquery.ui.all.css" TYPE="text/css"/>
+<link rel="stylesheet" href="/assets/css/jqgrid/ui.jqgrid.css" TYPE="text/css"/>
+<link rel="stylesheet" href="/assets/css/jqgrid/ui.jqgrid-bootstrap.css" TYPE="text/css"/>
+<link rel="stylesheet" href="/assets/css/jqgrid/ui.jqgrid-bootstrap-ui.css" TYPE="text/css"/>
+<link rel="stylesheet" href="/assets/css/jqgrid/ui.multiselect.css" TYPE="text/css"/>
+<link rel="stylesheet" href="/assets/css/zTreeStyle.css" TYPE="text/css"/>
+<#--D:\进销存\21erp\web\assets\css\zTreeStyle.css-->
+<#--D:\进销存\21erp\web\assets\css\jqui\jquery.ui.theme.css-->
+<style>
+    .comboDiv {
+        position: absolute;
+        z-index:999;
+    }
+</style>
+<div class="wrapper" ms-controller="checkProduct">
+    <div class="mod-search cf">
+        <div class="fl">
+            <ul class="ul-inline">
+                <li>
+                    <input type="text" id="keyword" ms-change="changeKeyWord(this.value)" class="ui-input con" value="" placeholder="请输入商品名称或型号">
+                </li>
+                <li>
+                    <label>类别:</label>
+                    <input type="text" id="category" class="ui-input" style="width:200px" readonly="readonly">
+                </li>
+                <li>
+                    <label>品牌:</label>
+                    <#--<input type="text" id="brand" class="ui-input" style="width:200px" readonly="readonly">-->
+                    <#--brandList-->
+                    <select  id = brand ms-change="changeBrand(this.value)" class="ui-input" style="width: auto">
+                        <option ms-repeat="brandList" ms-value="el.merch_brand">{{el.merch_brand}}</option>
+                    </select>
+
+                </li><li>
+                <label>规格:</label>
+            <#--<input type="text" id="brand" class="ui-input" style="width:200px" readonly="readonly">-->
+            <#--brandList-->
+                <select  id ="stander" ms-change="changeStander(this.value)" class="ui-input" style="width: auto">
+                    <option ms-repeat="specificationList" ms-value="el.merch_stander">{{el.merch_stander}}</option>
+                </select>
+
+            </li>
+
+
+                <li><a class="ui-btn mrb" id="search" title="查询"><i class="fa fa-search"></i></a></li>
+            </ul>
+        </div>
+        <div class="fr">
+            <#--<a class="ui-btn ui-btn-sp mrb" id="add" title="新增"><i class="fa fa-plus"></i></a>-->
+            <#--<a class="ui-btn mrb" id="import" title="导入"><i class="fa fa-upload"></i></a>-->
+            <#--<a class="ui-btn mrb" id="export" title="导出"><i class="fa fa-download"></i></a>-->
+            <#--<a href="#" class="ui-btn" id="btn-batchDel" title="批量删除"><i class="red fa fa-trash-o"></i></a>-->
+        </div>
+    </div>
+    <div class="grid-wrap">
+        <table id="grid">
+        </table>
+        <div id="page"></div>
+    </div>
+</div>
+
+</@layout>

@@ -1,0 +1,242 @@
+<#include "../../inc/layout.html">
+    <@layout title="客户" js="crm/customer/view.js">
+    <script type="text/javascript">
+
+    </script>
+    <style>
+        body {
+            background: #fff;
+            display: block;
+        }
+
+        .home-control {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 12px;
+            line-height: 28px;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: rgb(255, 255, 255);
+            border-radius: 2px;
+            background-color: rgb(13, 155, 242);
+        }
+
+        img { border: 0px; }
+        .bannerbox { width: 800px; height: 447px; overflow: hidden; margin: 0px auto; }
+        #focus { width: 800px; height: 447px; clear: both; overflow: hidden; position: relative; float: left; }
+        #focus ul { width: 800px; height: 447px; float: left; position: absolute; clear: both; padding: 0px; margin: 0px; }
+        #focus ul li { float: left; width: 800px; height: 447px; overflow: hidden; position: relative; padding: 0px; margin: 0px; }
+        #focus .preNext { width: 350px; height: 500px; position: absolute; top: 0px; cursor: pointer; }
+        #focus .pre { left: 0; background: url(/app/crm/concatRecord/img/sprite.png) no-repeat left center; }
+        #focus .next { right: 0; background: url(/app/crm/concatRecord/img/sprite1.png) no-repeat right center; }
+    </style>
+    <div class="manage-wrapper" ms-controller="view">
+        <div class="manage-wrap">
+            <ul class="nav nav-tabs">
+                <li class="active" ms-click="showTab(0,this)" ms-class="active:tabActive==0"><a href="#">客户信息</a></li>
+                <li ms-click="showTab(1,this)" ms-class="active:tabActive==1"><a href="#">首要联系人</a></li>
+                <li ms-click="showTab(2,this)" ms-class="active:tabActive==2"><a href="#">联系人列表</a></li>
+                <li ms-click="showTab(3,this)" ms-class="active:tabActive==3"><a href="#">评论</a></li>
+                <li ms-click="showTab(4,this)" ms-class="active:tabActive==4" onclick="initializeView()"><a
+                        href="#">位置</a></li>
+                <li ms-click="showTab(5,this)" ms-class="active:tabActive==5"><a
+                        href="#">照片</a></li>
+
+                <!-- onclick="initializeView({{data.latitude}},{{data.longitude}}) -->
+                <!--   		<li ms-click="showTab(4,this)" ms-class="active:tabActive==4"><a href="#">订单</a></li> -->
+            </ul>
+            <div ms-visible="tabActive==0" style="padding-top:5px;">
+                <ul class="mod-form-rows base-form">
+                    <li class="row-item">
+                        <div class="label-wrap"><label>类别</label></div>
+                        <div class="ctn-wrap">
+                            {{data.type|type}}
+                        </div>
+                    </li>
+                </ul>
+                <ul class="mod-form-rows base-form">
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="name">客户名称</label></div>
+                        <div class="ctn-wrap">{{data.name}},{{data.latitude}},{{data.longitude}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="sn">客户编号</label></div>
+                        <div class="ctn-wrap">{{data.sn}}，{{data.id}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="sn">会员卡号</label></div>
+                        <div class="ctn-wrap">{{data.member_card}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="sn">金额</label></div>
+                        <div class="ctn-wrap">{{data.amt|money}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="">负责人</label></div>
+                        <div class="ctn-wrap">{{data.head_name}}</div>
+                    </li>
+                    <li class="row-item">
+
+                        <div class="label-wrap"><label for="">客户来源</label></div>
+                        <div class="ctn-wrap">
+                            {{data.origin|custParame}}
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="">客户级别</label></div>
+                        <div class="ctn-wrap">
+                            {{data.rating|rating}}
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="">与公司关系</label></div>
+                        <div class="ctn-wrap">
+                            {{data.ownership|custParame}}
+                        </div>
+                    </li>
+                    <li class="row-item" ms-visible="data.type==1">
+                        <div class="label-wrap"><label for="">行业</label></div>
+                        <div class="ctn-wrap">
+                            {{data.industry|custParame}}
+                        </div>
+                    </li>
+                    <li class="row-item" ms-visible="data.type==1">
+                        <div class="label-wrap"><label for="">人员规模</label></div>
+                        <div class="ctn-wrap">
+                            {{data.staff_size|custParame}}
+                        </div>
+                    </li>
+                    <li class="row-item" ms-visible="data.type==1">
+                        <div class="label-wrap"><label for="">企业类别</label></div>
+                        <div class="ctn-wrap">
+                            {{data.ent_cate|custParame}}
+                        </div>
+                    </li>
+                    <li class="row-item" ms-visible="data.type==1">
+                        <div class="label-wrap"><label for="">年营业额</label></div>
+                        <div class="ctn-wrap">
+                            {{data.year_turnover|custParame}}
+                        </div>
+                    </li>
+                    <li class="row-item" ms-visible="data.type==1">
+                        <div class="label-wrap"><label for="">公司阶段</label></div>
+                        <div class="ctn-wrap">
+                            {{data.ent_stage|custParame}}
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="email">邮箱</label></div>
+                        <div class="ctn-wrap"> {{data.email}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">电话</label></div>
+                        <div class="ctn-wrap"> {{data.telephone}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">传真</label></div>
+                        <div class="ctn-wrap">{{data.fax}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">地区</label>
+                        </div>
+                        <div class="ctn-wrap">{{data.province|area}}-{{data.city|area}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="">地址</label></div>
+                        <div class="ctn-wrap"> {{data.address}}</div>
+                    </li>
+                </ul>
+                <ul class="mod-form-rows">
+                    <li class="row-item pb0">
+                        <div class="label-wrap"><label for="remark">备注</label></div>
+                        <div class="ctn-wrap">{{data.remark}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div style="padding-top:5px;" ms-visible="tabActive==1">
+                <!-- 添加联系人 -->
+                <ul class="mod-form-rows base-form">
+                    <li class="row-item">
+                        <div class="label-wrap"><label>姓名</label></div>
+                        <div class="ctn-wrap">{{contacts.name}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>性别</label></div>
+                        <div class="ctn-wrap"><span ms-visible="contacts.sex==1">男</span><span
+                                ms-visible="contacts.sex==0">女</span>
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>称呼</label></div>
+                        <div class="ctn-wrap">{{contacts.saltname}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>部门</label></div>
+                        <div class="ctn-wrap">{{contacts.department}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>职位</label></div>
+                        <div class="ctn-wrap">{{contacts.post}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>电话</label></div>
+                        <div class="ctn-wrap">{{contacts.telephone}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>手机</label></div>
+                        <div class="ctn-wrap">{{contacts.mobile}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>邮箱</label></div>
+                        <div class="ctn-wrap">{{contacts.email}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>QQ</label></div>
+                        <div class="ctn-wrap">{{contacts.qq}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>身份证</label></div>
+                        <div class="ctn-wrap">{{contacts.idcard}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>联系地址</label></div>
+                        <div class="ctn-wrap">{{contacts.address}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>备注</label></div>
+                        <div class="ctn-wrap">{{contacts.description}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="grid-wrap" style="padding-top:5px;" ms-visible="tabActive==2">
+                <table id="grid"></table>
+            </div>
+            <div class="grid-wrap" style="padding-top:5px;" ms-visible="tabActive==3">
+                <!-- 评论 -->
+            </div>
+            <div class="grid-wrap" style="padding-top:5px;" ms-visible="tabActive==4">
+                <!--位置 -->
+                <div class="mod-form-rows base-form">
+                    <div id="customer_map" style="width: 820px; height: 534px"></div>
+                </div>
+            </div>
+            <div id="tab5" class="carousel slide" style="padding-top:5px;" ms-visible="tabActive==5">
+
+
+                <!--<div>
+                    {{imgArray.get(0).file_path}}
+                </div>-->
+                <#--<div ms-repeat="imgArray">-->
+                    <#--file_path:{{el.file_path}} --- {{$index}}-->
+                <#--</div>-->
+                <!--< class="mod-form-rows base-form">-->
+                <!--<img ms-repeat="imgArray" src="el.file_path"/>-->
+                <!--<li ms-repeat="array">{{el}} -&#45;&#45; {{$index}}</li>-->
+                <!--<img id="customer_image" style="width: 820px; height: 534px" src="{{contacts.id}}"/>-->
+                <!--</img>-->
+            </div>
+        </div>
+    </div>
+</@layout>

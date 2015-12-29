@@ -1,0 +1,45 @@
+<#include "../../inc/layout.html">
+<@layout title="客户" js="oa/workreport/view.js">
+<style>
+    body {
+        background: #fff;
+        display: block;
+    }
+</style>
+<div class="manage-wrapper" ms-controller="view" style="overflow: scroll;overflow-x: hidden;height: 100%;width:99%">
+    <div class="manage-wrap">
+        <ul class="mod-form-rows base-form">
+            <li class="row-item">
+                <div class="label-wrap"><label>主题</label></div>
+                <div class="ctn-wrap">{{data.subject}}</div>
+            </li>
+            <li class="row-item">
+                <div class="label-wrap"><label>报告时间</label></div>
+                <div class="ctn-wrap">{{data.reportTime}}</div>
+            </li>
+            <li class="row-item ">
+                <div class="label-wrap"><label>提交人</label></div>
+                <div class="ctn-wrap">{{data.user_name}}</div>
+            </li>
+            <li class="row-item">
+                <div class="label-wrap"><label>报告类型</label></div>
+                <div class="ctn-wrap">{{data.type}}</div>
+            </li>
+        </ul>
+        <li>
+            <label>附件下载</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>附件下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>附件下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>附件下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </li>
+        <li>
+            <div class="label-wrap"><label>总结</label></div>
+            <div><textarea readonly cols="130" rows="10"></textarea></div>
+        </li>
+        <li>
+            <div class="label-wrap"><label>计划</label></div>
+            <div><textarea readonly cols="130" rows="10">156156156</textarea></div>
+        </li>
+    </div>
+</div>
+</@layout>

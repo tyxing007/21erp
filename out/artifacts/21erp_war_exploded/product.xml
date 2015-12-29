@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 商品列表请求 -->
+<data>
+    <head_message>
+        <message_no>String</message_no><!-- 序号-->
+        <app_no>String</app_no><!-- APP版本号-->
+        <data_no>String</data_no><!-- 数据结构版本号-->
+        <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+        <business_code>String</business_code><!-- 业务编号-->
+    </head_message>
+    <main_message>
+        <search_key></search_key>
+        <search_customer></search_customer><!-- 当查找类型为全部时，此属性可为空，若存在，则会显示历史价格-->
+        <search_type></search_type><!-- 0为全部 1为历史 2为促销-->
+        <product_category></product_category> <!-- 商品类别-->
+        <product_brand></product_brand><!-- 商品品牌-->
+        <product_spe></product_spe><!-- 商品规格-->
+        <page_size></page_size>
+        <page_num></page_num>
+    </main_message>
+</data>
+
+
+        <!-- 商品列表请求返回，在无网络的时候查询离线商品 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <product_info>
+        <product_id></product_id>
+        <product_name></product_name>
+        <product_billsn></product_billsn>
+        <product_his_price></product_his_price>
+        <product_price></product_price>
+        <product_brand></product_brand>
+        <product_specification></product_specification>
+        <product_category></product_category>
+        <product_pic>
+            <pic></pic><!-- 有几个增加几个-->
+        </product_pic>
+        <product_stock></product_stock>
+        <product_unit><!-- 产品计量单位 最多只获取四个-->
+            <unit> <!-- 拥有多个，可自行添加，可无-->
+                <unit_name></unit_name>
+                <unit_num></unit_num>
+            </unit>
+            <unit> <!-- 拥有多个，可自行添加-->
+                <unit_name></unit_name>
+                <unit_num></unit_num>
+            </unit>
+        </product_unit>
+    </product_info>
+</main_message>
+</data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

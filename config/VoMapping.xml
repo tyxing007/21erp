@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VoMappings>
+    <Vo>
+        <head>CUS000001</head>
+        <map>net.loyin.netService.vo.customerVo.customerInfoVo.CustomerVo</map>
+    </Vo>
+    <Vo>
+        <head>CUS000003</head>
+        <map>net.loyin.netService.vo.customerVo.contactsVo.ContactsVo</map>
+    </Vo>
+    <Vo>
+        <head>CUS000005</head>
+        <map>net.loyin.netService.vo.customerVo.customerDetailVo.CustomerDetailVo</map>
+    </Vo>
+    <Vo>
+        <head>CUS000007</head>
+        <map>net.loyin.netService.vo.customerVo.customerVisitsVo.CustomerVisitsVo</map>
+    </Vo>
+    <Vo>
+        <head>CUS000009</head>
+        <map>net.loyin.netService.vo.customerVo.customerAddVo.CustomerAddVo</map>
+    </Vo>
+    <Vo>
+        <head>ORDER0001</head>
+        <map>net.loyin.netService.vo.orderVo.orderInfoVo.OrderVo</map>
+    </Vo>
+    <Vo>
+        <head>ORDER0003</head>
+        <map>net.loyin.netService.vo.orderVo.orderDetailVo.OrderDetailVo</map>
+    </Vo>
+    <Vo>
+        <head>ORDER0005</head>
+        <map>net.loyin.netService.vo.orderVo.orderOperatingVo.OrderOperatingVO</map>
+    </Vo>
+    <Vo>
+        <head>ORDER0007</head>
+        <map>net.loyin.netService.vo.orderVo.orderDownVo.OrderDownVo</map>
+    </Vo>
+    <Vo>
+        <head>FILE00001</head>
+        <map>net.loyin.netService.vo.fileVo.FileSaveVo</map>
+    </Vo>
+    <Vo>
+        <head>DSR000001</head>
+        <map>net.loyin.netService.vo.dsrVo.attendanceVO.DsrAttendanceVo</map>
+    </Vo>
+    <Vo>
+        <head>DSR000003</head>
+        <map>net.loyin.netService.vo.dsrVo.attendanceVO.DsrAttendanceAddVo</map>
+    </Vo>
+
+    <Vo>
+        <head>DSR000005</head>
+        <map>net.loyin.netService.vo.dsrVo.punchVo.PunchVo</map>
+    </Vo>
+
+    <Vo>
+        <head>OFFLINE01</head>
+        <map>net.loyin.netService.vo.offlineVo.offlineVo.OfflineVo</map>
+    </Vo>
+    <Vo>
+        <head>PRO000001</head>
+        <map>net.loyin.netService.vo.productVo.ProductVo</map>
+    </Vo>
+    <Vo>
+        <head>SYS000001</head>
+        <map>net.loyin.netService.vo.sysVo.loginVo.LoginVo</map>
+    </Vo>
+    <Vo>
+        <head>SYS000003</head>
+        <map>net.loyin.netService.vo.sysVo.logoutVo.LogoutVo</map>
+    </Vo>
+    <Vo>
+        <head>SYS000005</head>
+        <map>net.loyin.netService.vo.sysVo.passWordVo.PassWordVo</map>
+    </Vo>
+    <Vo>
+        <head>SYS000007</head>
+        <map>net.loyin.netService.vo.sysVo.userVo.UserVo</map>
+    </Vo>
+
+    <Vo>
+        <head>SYS000009</head>
+        <map>net.loyin.netService.vo.sysVo.parameVo.ParameVo</map>
+    </Vo>
+
+    <Vo>
+        <head>SYS000011</head>
+        <map>net.loyin.netService.vo.sysVo.parameVo.ParameVo</map>
+    </Vo>
+
+
+
+
+    <Vo>
+        <head>PLAN00001</head>
+        <map>net.loyin.netService.vo.dsrVo.workVO.workAdd.workReportAddVo</map>
+    </Vo>
+
+    <Vo>
+        <head>PLAN00003</head>
+        <map>net.loyin.netService.vo.dsrVo.workVO.workList.workReportListVo</map>
+    </Vo>
+
+    <Vo>
+        <head>PLAN00005</head>
+        <map>net.loyin.netService.vo.dsrVo.workVO.workInfo.workReportInfoVo</map>
+    </Vo>
+
+</VoMappings>

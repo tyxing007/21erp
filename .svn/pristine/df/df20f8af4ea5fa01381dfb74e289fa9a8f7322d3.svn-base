@@ -1,0 +1,38 @@
+package net.loyin.netService.vo.dsrVo.attendanceVO;
+
+import net.loyin.netService.domain.CommonMessageVO;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * Created by Chao on 2015/12/1.
+ */
+@XmlRootElement(name = "data")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class DsrAttendanceAddReturnVo extends CommonMessageVO {
+
+    @XmlElement(name = "main_message")
+    private DsrAttendanceAddReturnMainData maindata;
+
+    @Override
+    public boolean validate(boolean isReqAudit) {
+        return false;
+    }
+
+    @Override
+    public String validate() {
+        return null;
+    }
+
+    @Override
+    public DsrAttendanceAddReturnMainData getMaindata() {
+        return maindata;
+    }
+
+    public void setMaindata(DsrAttendanceAddReturnMainData maindata) {
+        this.maindata = maindata;
+    }
+}

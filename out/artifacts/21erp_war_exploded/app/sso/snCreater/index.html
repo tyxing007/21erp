@@ -1,0 +1,27 @@
+<#include "../../inc/layout.html">
+<@layout title="序号规则管理" js="sso/snCreater/index.js">
+<div class="wrapper" ms-controller="ctrl">
+  <div class="mod-search cf">
+    <div class="fl">
+    </div>
+    <div class="fr">
+
+        <#--<li class="row-item" ms-if="showMenu('A12_1_S')" id="companyChoose">-->
+            <#--<div class="label-wrap"><label for="">所属公司</label></div>-->
+            <#--<div class="ctn-wrap">-->
+
+            <#--</div>-->
+        <#--</li>-->
+        <select ms-duplex="data.companyId" class="ui-input" ms-change="reload()" style="width: auto" ms-if="showMenu('A12_1_S')">
+            <option ms-repeat="companyList" ms-value="el.id">{{el.name}}</option>
+        </select>
+        <a class="ui-btn ui-btn-sp mrb" id="add" title="新增"><i class="fa fa-plus"></i></a>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <table id="grid">
+    </table>
+    <div id="page"></div>
+  </div>
+</div>
+</@layout>

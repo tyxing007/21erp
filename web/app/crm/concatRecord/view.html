@@ -1,0 +1,92 @@
+<#include "../../inc/layout.html"> <@layout title="客户联系记录"
+js="crm/concatRecord/view.js">
+<style>
+body {background: #fff;display: block;}
+img { border: 0px; }
+.bannerbox { width: 800px; height: 447px; overflow: hidden; margin: 0px auto; }
+#focus { width: 800px; height: 447px; clear: both; overflow: hidden; position: relative; float: left; }
+#focus ul { width: 800px; height: 447px; float: left; position: absolute; clear: both; padding: 0px; margin: 0px; }
+#focus ul li { float: left; width: 800px; height: 447px; overflow: hidden; position: relative; padding: 0px; margin: 0px; }
+#focus .preNext { width: 350px; height: 500px; position: absolute; top: 0px; cursor: pointer; }
+#focus .pre { left: 0; background: url(/app/crm/concatRecord/img/sprite.png) no-repeat left center; }
+#focus .next { right: 0; background: url(/app/crm/concatRecord/img/sprite1.png) no-repeat right center; }
+</style>
+<div class="manage-wrapper" ms-controller="view">
+    <ul class="nav nav-tabs">
+        <li class="active" ms-click="showTab(0,this)" ms-class="active:tabActive==0"><a href="#">联系记录</a></li>
+        <li ms-click="showTab(1,this)" ms-class="active:tabActive==1"><a href="#">联系图片</a></li>
+    </ul>
+
+	<div id="tab1" ms-visible="tabActive==0" class="manage-wrap">
+		<form action="" id="base_form">
+			<ul class="mod-form-rows base-form" >
+    			<li class="row-item">
+    				<div class="label-wrap"><label>联系主题</label></div>
+    				<div class="ctn-wrap">{{data.subject}}</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>联系类型</label></div>
+    				<div class="ctn-wrap">
+					{{data.concat_type|custParame}}
+					</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>客户状态</label></div>
+    				<div class="ctn-wrap">
+						{{data.cust_status|custParame}}
+					</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>销售阶段</label></div>
+    				<div class="ctn-wrap">
+					{{data.sale_stage|custParame}}
+					</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>客户</label></div>
+    				<div class="ctn-wrap">
+	    				{{data.customer_name}}
+          			</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>联系人</label></div>
+    				<div class="ctn-wrap">
+	          			{{data.contacts_name}}
+					</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>商机</label></div>
+    				<div class="ctn-wrap">
+	          			{{data.business_name}}
+          			</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>联系日期</label></div>
+    				<div class="ctn-wrap">{{data.concat_datetime}}</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>下次回访日期</label></div>
+    				<div class="ctn-wrap">{{data.next_datetime}}</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>创建人</label></div>
+    				<div class="ctn-wrap">{{data.creater_name}}</div>
+    			</li>
+    			<li class="row-item">
+    				<div class="label-wrap"><label>创建</label></div>
+    				<div class="ctn-wrap">{{data.create_datetime}}</div>
+    			</li>
+    			<li class="row-item oneRow">
+    				<div class="label-wrap"><label>联系内容</label></div>
+    				<div class="ctn-wrap">{{data.content}}</div>
+    			</li>
+    		</ul>
+		</form>
+	</div>
+
+    <div id="tab2" ms-visible="tabActive==1" class="carousel slide">
+
+    </div>
+
+</div>
+</@layout>

@@ -1,0 +1,62 @@
+<#include "../../inc/layout.html">
+<@layout title="创建公司" js="sso/company/view.js">
+<div class="wrapper" ms-controller="companyView">
+    <div class="manage-wrap">
+        <form action="" id="base_form">
+            <div style="padding-top:5px;">
+                <ul class="mod-form-rows base-form">
+                    <li class="row-item">
+                        <div class="label-wrap"><label>公司名称</label></div>
+                        <div class="ctn-wrap">{{data.name}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="sn">公司编号</label></div>
+                        <div class="ctn-wrap">{{data.code}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="sn">公司简称</label></div>
+                        <div class="ctn-wrap">{{data.short_name}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="">行业</label></div>
+                        <div class="ctn-wrap">{{data.industry_name}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">电话</label></div>
+                        <div class="ctn-wrap">{{data.telephone}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">传真</label></div>
+                        <div class="ctn-wrap">{{data.fax}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">地区</label>
+                        </div>
+                        <div class="ctn-wrap">{{data.province|area}}-{{data.city|area}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="email">邮箱</label></div>
+                        <div class="ctn-wrap"> {{data.reg_email}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="">地址</label></div>
+                        <div class="ctn-wrap"> {{data.address}}</div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>失效日期:</label></div>
+                        <div class="ctn-wrap"> {{data.expiry_date}}</div>
+                    </li>
+
+
+                </ul>
+                <ul class="mod-form-rows">
+                    <li class="row-item pb0">
+                        <div class="label-wrap"><label for="remark">备注</label></div>
+                        <div class="ctn-wrap">{{data.remark}}</div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+</@layout>

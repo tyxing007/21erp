@@ -1,0 +1,208 @@
+<#include "../../inc/layout.html">
+<@layout title="商品" js="scm/product/edit.js">
+<style>
+    body {
+        background: #fff;
+    }
+
+    .dn {
+        display: none;
+    }
+
+    .comboDiv {
+        position: absolute;
+    }
+</style>
+<div class="manage-wrapper" ms-controller="view">
+    <div class="manage-wrap">
+        <form action="" id="base_form">
+            <input type="hidden" name="id" id="id" ms-duplex="data.id">
+            <ul class="nav nav-tabs">
+                <li class="active" ms-click="showTab(0,this)" ms-class="active:tabActive==0"><a href="#">商品数量</a></li>
+                <li ms-click="showTab(1,this)" ms-class="active:tabActive==1"><a href="#">包装属性</a></li>
+                <li ms-click="showTab(2,this)" ms-class="active:tabActive==2" ms-if="data.product_type==2"><a
+                        href="#">组合产品选择</a></li>
+            </ul>
+            <div id="tab1" ms-visible="tabActive==0" style="padding-top:5px;">
+                <ul class="mod-form-rows base-form">
+                    <li class="row-item">
+                        <input type="hidden" id="category" ms-duplex="data.category">
+
+                        <div class="label-wrap"><label for="category_sel">类别</label>
+                        <#--addType-->
+                            <#--<a style="color: red" id="addType" title="新增自定义参数"><i class="fa fa-plus"></i>新增</a>-->
+                        </div>
+                        <div class="ctn-wrap">
+                            <input type="text" class="ui-input" id="category_sel" readonly <#--onblur="tree[0].hide()"-->
+                                   ms-duplex="data.category_name"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="status">状态</label></div>
+                        <div class="ctn-wrap">
+                            <label class="radio" ms-class-checked="data.status==0" ms-click="setStatus(0)">禁用</label>
+                            <label class="radio" ms-class-checked="data.status==1" ms-click="setStatus(1)">启用</label>
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="billsn">编号</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" maxlength="20" ms-duplex="data.billsn"
+                                                     id="billsn" placeholder="请输入编号，不输人则自动生成"></div>
+                    </li>
+
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="status">产品类型</label></div>
+                        <div class="ctn-wrap">
+                            <label class="radio" ms-class-checked="data.product_type==0"
+                                   ms-click="setType(0)">普通产品</label>
+                            <label class="radio" ms-class-checked="data.product_type==1"
+                                   ms-click="setType(1)">赠品产品</label>
+                            <label class="radio" ms-class-checked="data.product_type==2"
+                                   ms-click="setType(2)">组合产品</label>
+                        </div>
+                    </li>
+
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="name">名称</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="name" placeholder="请输入名称"
+                                                     maxlength="50" data-rule="required" ms-duplex="data.name"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="model">型号</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="model" maxlength="50"
+                                                     placeholder="请输入型号" ms-duplex="data.model"></div>
+                    </li>
+                    <li class="row-item">
+                        <input type="hidden" id="unit" ms-duplex="data.unit">
+
+                        <div class="label-wrap"><label for="unit_sel">计量单位</label>
+                            <#--<a style="color: red" id="addUnitType"title="新增自定义参数"><iclass="fa fa-plus"></i>新增</a>-->
+                        </div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="unit_sel"
+                                                     ms-duplex="data.unit_name" readonly <#--onblur="tree[1].hide()"-->></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="purchase_price">建议采购价(元)</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="purchase_price" data-rule="money"
+                                                     placeholder="请输入采购价" ms-duplex="data.purchase_price"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="sale_price">建议销售价(元)</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="sale_price" data-rule="money"
+                                                     placeholder="请输入销售价" ms-duplex="data.sale_price"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="brand">品牌</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="brand" maxlength="50"
+                                                     placeholder="请输入品牌" ms-duplex="data.brand"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="purchase_price">库存预警</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="stock_warn" data-rule="digits"
+                                                     placeholder="请输入库存预警量" ms-duplex="data.stock_warn"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="specification">商品规格</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="specification" maxlength="50"
+                                                     placeholder="请输入商品规格" ms-duplex="data.specification"></div>
+                    </li>
+                </ul>
+                <ul class="mod-form-rows">
+                    <li class="row-item pb0">
+                        <div class="label-wrap"><label for="remark">备注</label></div>
+                        <div class="ctn-wrap"><textarea id="remark" class="ui-input" placeholder="添加备注信息"
+                                                        ms-duplex="data.remark"></textarea></div>
+                    </li>
+                </ul>
+            </div>
+            <div id="tab2" ms-visible="tabActive==1" style="padding-top:5px;">
+                <ul class="ul-inline">
+                    <li class="input-group-lg">
+                        <label>包装单位:</label>
+                        <input type="text" id="comparisonUnit" class="ui-input con" placeholder="包装单位">
+                    </li>
+                    <li class="input-group-lg">
+                        <label>包装数量:</label>
+                        <input type="text" id="comparisonNum" class="ui-input con" placeholder="包装数量">
+                    </li>
+                    <li class="input-group-lg">
+                        <button type="button" id="okButton" class="ui-btn mrb">确定</button>
+                    </li>
+                </ul>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th hidden>ID</th>
+                            <th>包装单位</th>
+                            <th>包装数量</th>
+                            <th>删除
+                            <th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="tbFirst" ms-repeat="comparison">
+                            <td hidden>{{el.id}}</td>
+                            <td>{{el.comparison_unit}}</td>
+                            <td>{{el.comparison_num}}</td>
+                            <td><span class="fa fa-trash-o mrb" id="delete" title="删除"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tab3" ms-visible="tabActive==2" style="padding-top:5px;">
+                <ul class="ul-inline">
+                    <li>
+                        <div class="row input-group-lg">
+                            <div class="input-group" style="margin-left: 8px;padding-left: 8px;">
+                                <label>条码:</label>
+                                <input type="hidden" ms-duplex="query.keyBar" class="ui-input" id="barCodeCheck">
+                                <input type="text" ms-duplex="query.keyName" class="ui-input" id="productNameCheck">
+                                <label>数量:</label>
+                                <input type="text" ms-duplex="query.keynum" class="ui-input" value="" id="keynum"
+                                       placeholder="请输入数量">
+                                <a class="ui-btn" id="okIndex">添加</a>
+                                <a class="ui-btn" id="search" title="查询"><i class="fa fa-search"></i></a>
+                                &nbsp;
+                                <label for="model" style="vertical-align:middle;"><input onchange="changeModel(this)" type="checkbox" style="vertical-align:middle;" value="" id="model">条码枪模式</label>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown">
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" style="left:auto" role="menu">
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </li>
+                </ul>
+                <div class="table-combination">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th hidden>ID</th>
+                            <th>产品名称</th>
+                            <th>产品数量</th>
+                            <th>删除
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="tbCombination" ms-repeat="combination">
+                            <td hidden>{{el.id}}</td>
+                            <td>{{el.product_name}}</td>
+                            <td>{{el.product_num}}</td>
+                            <td><span class="fa fa-trash-o mrb" id="delete" title="删除"></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</@layout>

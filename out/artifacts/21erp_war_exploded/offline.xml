@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 离线网点数据同步-->
+<data>
+<head_message>
+<message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <customer_info>
+        <customer_id></customer_id>
+        <customer_name></customer_name>
+        <customer_address></customer_address>
+        <customer_tel></customer_tel>
+        <customer_lat></customer_lat>
+        <customer_lng></customer_lng>
+        <customer_contacts></customer_contacts>
+        <customer_contacts_phone></customer_contacts_phone>
+        <customer_pic></customer_pic>
+        <customer_status></customer_status><!-- 删除状态，如果已不是负责人，则在离线数据中删除-->
+        <customer_count></customer_count>
+    </customer_info>
+</main_message>
+</data>
+
+        <!-- 离线产品数据同步-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <product_info>
+        <product_id></product_id>
+        <product_name></product_name>
+        <product_billsn></product_billsn>
+        <product_his_price></product_his_price>
+        <product_price></product_price>
+        <product_brand></product_brand>
+        <product_specification></product_specification>
+        <product_category></product_category>
+        <product_pic>
+            <pic></pic><!-- 有几个增加几个-->
+        </product_pic>
+        <product_stock></product_stock>
+        <product_unit><!-- 产品计量单位-->
+            <unit> <!-- 拥有多个，可自行添加，可无-->
+                <unit_name></unit_name>
+                <unit_num></unit_num>
+            </unit>
+            <unit> <!-- 拥有多个，可自行添加-->
+                <unit_name></unit_name>
+                <unit_num></unit_num>
+            </unit>
+        </product_unit>
+    </product_info>
+</main_message>
+</data>
+
+<!-- 离线数据请求-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+        <update_type></update_type><!-- 同步类型(0.客户数据/1.产品数据)-->
+        <index></index>
+</main_message>
+</data>
+
+
+
+<!-- 推送服务，推送的报文，后续开发-->
+<!-- 产品-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <update_type>1</update_type><!-- 同步类型(0.客户数据/1.产品数据)-->
+    <product_info>
+        <product_id></product_id>
+        <product_name></product_name>
+        <product_billsn></product_billsn>
+        <product_his_price></product_his_price>
+        <product_price></product_price>
+        <product_brand></product_brand>
+        <product_specification></product_specification>
+        <product_category></product_category>
+        <product_pic>
+            <pic></pic><!-- 有几个增加几个-->
+        </product_pic>
+        <product_stock></product_stock>
+        <product_unit><!-- 产品计量单位-->
+            <unit> <!-- 拥有多个，可自行添加，可无-->
+                <unit_name></unit_name>
+                <unit_num></unit_num>
+            </unit>
+            <unit> <!-- 拥有多个，可自行添加-->
+                <unit_name></unit_name>
+                <unit_num></unit_num>
+            </unit>
+        </product_unit>
+    </product_info>
+    <is_delete>0</is_delete> <!-- 是否删除 0为删除，1为添加-->
+</main_message>
+</data>
+
+        <!-- 客户-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <update_type>0</update_type><!-- 同步类型(0.客户数据/1.产品数据)-->
+    <customer_info>
+        <customer_id></customer_id>
+        <customer_name></customer_name>
+        <customer_address></customer_address>
+        <customer_tel></customer_tel>
+        <customer_lat></customer_lat>
+        <customer_lng></customer_lng>
+        <customer_contacts></customer_contacts>
+        <customer_contacts_phone></customer_contacts_phone>
+        <customer_pic></customer_pic>
+        <customer_status></customer_status><!-- 删除状态，如果已不是负责人，则在离线数据中删除-->
+        <customer_count></customer_count>
+    </customer_info>
+    <is_delete>0</is_delete> <!-- 是否删除 0为删除，1为添加-->
+</main_message>
+</data>
+

@@ -1,0 +1,62 @@
+<#include "../../inc/layout.html">
+<@layout title="商品管理" js="scm/average/index.js">
+<style>
+.comboDiv {position:absolute;}
+</style>
+<div class="wrapper">
+  <div class="mod-search cf">
+    <div class="fl">
+      <ul class="ul-inline">
+        <li>
+          <input type="text" id="keyword" class="ui-input con" value="" placeholder="请输入商品名称或型号">
+        </li>
+        <li>
+        <label>类别:</label>
+          <input type="text" id="category" class="ui-input" style="width:200px" readonly="readonly">
+        </li>
+          <li>
+              <label>状态:</label>
+              <select id="status" class="ui-input">
+                  <option value="">全部</option>
+                  <option value="1">待结算</option>
+                  <option value="2">已结算</option>
+              </select>
+          </li>
+
+          <li>
+              <label>年度:</label>
+              <select id="year" class="ui-input">
+                  <option value="">全部</option>
+              </select>
+          </li>
+
+          <li>
+              <label>月份:</label>
+              <select id="month" class="ui-input">
+                  <option value="">全部</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+
+              </select>
+          </li>
+        <li><a class="ui-btn mrb" id="search" title="查询"><i class="fa fa-search"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid-wrap">
+    <table id="grid">
+    </table>
+    <div id="page"></div>
+  </div>
+</div>
+</@layout>

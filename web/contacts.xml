@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 联系人列表请求 -->
+<data>
+    <head_message>
+        <message_no>String</message_no><!-- 序号-->
+        <app_no>String</app_no><!-- APP版本号-->
+        <data_no>String</data_no><!-- 数据结构版本号-->
+        <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+        <business_code>String</business_code><!-- 业务编号-->
+    </head_message>
+    <main_message>
+        <contacts_type></contacts_type> <!-- 0为内部通讯录 1为外部通讯录-->
+        <contacts_key></contacts_key><!-- 搜索关键字-->
+        <page_size></page_size>
+        <page_num></page_num>
+    </main_message>
+</data>
+
+
+<!-- 联系人返回记录-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <contacts_type></contacts_type><!-- 0为内部通讯录 1为外部通讯录-->
+    <contacts_info>
+        <contacts> <!-- 可自行创建，有多个时创建多个 -->
+            <contacts_name></contacts_name>
+            <contacts_pic></contacts_pic>
+            <contacts_phone></contacts_phone><!-- 若有多个则用？分割-->
+        </contacts>
+    </contacts_info>
+</main_message>
+</data>
+
+
+
+
+
+
+
+
+
+
+
+

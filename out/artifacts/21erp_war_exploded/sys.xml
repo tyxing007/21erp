@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 登陆请求 -->
+<data>
+    <head_message>
+        <message_no>1.0</message_no>
+        <!-- 序号-->
+        <app_no>1.0</app_no>
+        <!-- APP版本号-->
+        <data_no>1.0</data_no>
+        <!-- 数据结构版本号-->
+        <request_time>2015-12-14 10:35:00</request_time>
+        <!-- 请求时间-->
+        <business_code>SYS000001</business_code>
+        <!-- 业务编号-->
+    </head_message>
+    <main_message>
+        <login_name>boss1</login_name>
+        <login_pass_world>123456</login_pass_world>
+        <login_company>陕西润芝宝商贸有限公司</login_company>
+    </main_message>
+</data>
+
+        <!-- 登陆请求返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <!--<user_name></user_name>-->
+    <!--<user_phone></user_phone>-->
+    <!--<user_company></user_company>-->
+    <user_pic></user_pic>
+    <user_cookie></user_cookie>
+</main_message>
+</data>
+        <!-- 退出请求 -->
+
+
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <logout_name></logout_name>
+    <logout_company></logout_company>
+</main_message>
+</data>
+
+
+        <!-- 登陆请求返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <!--<user_name></user_name>-->
+    <!--<user_phone></user_phone>-->
+    <!--<user_company></user_company>-->
+    <user_pic></user_pic>
+    <user_cookie></user_cookie>
+</main_message>
+</data>
+
+
+        <!-- 修改密码请求 -->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <login_id></login_id>
+    <old_pass_world></old_pass_world>
+    <new_pass_world></new_pass_world>
+</main_message>
+</data>
+
+
+        <!-- 登出请求修改成功 -->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+</main_message>
+</data>
+
+        <!-- 以下均不做处理 start-->
+
+        <!-- 发送短信请求-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <phone></phone>
+</main_message>
+</data>
+
+        <!-- 发送状态返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+</main_message>
+</data>
+
+        <!-- 验证手机-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <phone></phone>
+    <verification_code></verification_code>
+</main_message>
+</data>
+
+
+        <!-- 文件上传接口-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <id></id>
+</main_message>
+</data>
+
+        <!-- end-->
+
+
+<!-- 获取上级用户-->
+
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <user_id></user_id>
+</main_message>
+</data>
+
+
+
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <user_info><!-- 自行添加-->
+        <user_id></user_id>
+        <user_name></user_name>
+    </user_info>
+</main_message>
+</data>
+
+
+
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <sys_parame></sys_parame>
+</main_message>
+</data>
+
+
+
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <sys_parame_list> <!-- 自行添加 -->
+        <sys_parame_id></sys_parame_id>
+        <sys_parame_name></sys_parame_name>
+    </sys_parame_list>
+</main_message>
+</data>
+
+
+
+
+
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <sys_parame></sys_parame> <!-- 0为品牌 1为规格-->
+    <sys_type></sys_type>
+    <sys_specification></sys_specification>
+    <sys_brand></sys_brand>
+    <sys_search></sys_search>
+</main_message>
+</data>
+
+
+
+
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <sys_parame_list> <!-- 自行添加 -->
+        <sys_parame_name></sys_parame_name>
+    </sys_parame_list>
+</main_message>
+</data>
+
+

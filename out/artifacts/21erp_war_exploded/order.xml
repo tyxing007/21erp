@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 订单列表请求-->
+<data>
+    <head_message>
+        <message_no>String</message_no>
+        <!-- 序号-->
+        <app_no>String</app_no>
+        <!-- APP版本号-->
+        <data_no>String</data_no>
+        <!-- 数据结构版本号-->
+        <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+        <!-- 请求时间-->
+        <business_code>String</business_code>
+        <!-- 业务编号-->
+        <channel_no>String</channel_no>
+        <!-- 渠道号,实则为企业ID-->
+    </head_message>
+    <main_message>
+        <order_page></order_page>
+        <!-- 不可为空-->
+        <order_pageSize></order_pageSize>
+        <!-- 不可为空-->
+        <search_key></search_key>
+        <!-- 若无可为空，但是参数必须存在-->
+    </main_message>
+</data>
+        <!-- 订单列表返回数据-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务返回编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <order_info><!-- 订单信息，可自行添加-->
+        <order_id></order_id>
+        <!-- 订单Id-->
+        <order_sn></order_sn>
+        <!-- 订单编号-->
+        <order_remark></order_remark>
+        <order_amt></order_amt>
+        <order_status></order_status>
+        <!-- 订单状态，该状态为中文，可直接使用-->
+        <order_product_count></order_product_count>
+        <!-- 产品数量-->
+        <customer_pic></customer_pic>
+        <!-- 网店照片-->
+        <customer_name></customer_name>
+        <!-- 网店照片-->
+    </order_info>
+</main_message>
+</data>
+
+
+
+        <!-- 订单详情请求-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <order_id></order_id>
+</main_message>
+</data>
+
+
+        <!-- 订单详情返回数据-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+        <order_id></order_id>
+        <!-- 订单Id-->
+        <customer_id></customer_id>
+        <!-- 客户ID-->
+        <customer_name></customer_name>
+        <!-- 客户名称-->
+        <order_contacts></order_contacts>
+        <!-- 订单联系人-->
+        <order_contacts_phone></order_contacts_phone>
+        <!-- 订单联系电话-->
+        <order_address></order_address>
+        <!-- 订单送货地点-->
+        <order_time></order_time>
+        <order_remark></order_remark>
+        <order_amt></order_amt>
+        <order_product>
+            <product_info> <!-- 多个产品，自行添加-->
+                <product_id></product_id>
+                <product_billsn></product_billsn>
+                <!-- 产品编号-->
+                <product_name></product_name>
+                <!-- 产品名称-->
+                <product_num></product_num>
+                <!-- 产品数量-->
+                <product_sale></product_sale>
+                <!-- 产品单价-->
+                <product_amt></product_amt>
+                <!-- 产品数量-->
+                <product_unit></product_unit>
+                <!-- 产品单位-->
+                <product_remark></product_remark>
+            </product_info>
+        </order_product>
+</main_message>
+</data>
+
+        <!-- 订单提交，若无网络的时候，放进内存，开启服务定时检测网络，并进行同步-->
+        <!-- 提交完成之后发起删除购物车命令-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <order_id></order_id><!-- 若第一次则无需添加，若非第一次则需，否则将会另外生成订单-->
+    <customer_id></customer_id>
+    <!-- 客户ID-->
+    <order_contacts></order_contacts>
+    <!-- 订单联系人-->
+    <order_contacts_phone></order_contacts_phone>
+    <!-- 订单联系电话-->
+    <order_address></order_address>
+    <!-- 订单送货地点-->
+    <order_time></order_time>
+    <order_remark></order_remark>
+    <order_amt></order_amt>
+    <product_count></product_count>
+    <!-- 产品剩余种类-->
+    <order_product>
+        <product_info> <!-- 多个产品，自行添加，若超过10个，则分段-->
+            <product_id></product_id>
+            <product_num></product_num>
+            <product_sale></product_sale>
+            <product_amt></product_amt>
+            <product_remark></product_remark>
+        </product_info>
+    </order_product>
+</main_message>
+</data>
+
+<delete>
+<!-- 添加购物车-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <order_product>
+        <product_info> <!-- 多个产品，自行添加-->
+            <product_id></product_id>
+            <product_num></product_num>
+            <product_sale></product_sale>
+            <product_amt></product_amt>
+            <product_remark></product_remark>
+        </product_info>
+    </order_product>
+</main_message>
+</data>
+
+        <!-- 删除购物车-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <product_info>
+        <product_id></product_id>
+        <!-- 可自行添加-->
+    </product_info>
+</main_message>
+</data>
+
+
+        <!-- 修改购物车-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <order_product>
+        <product_info> <!-- 多个产品，自行添加-->
+            <cart_id></cart_id>
+            <product_id></product_id>
+            <product_num></product_num>
+            <product_sale></product_sale>
+            <product_amt></product_amt>
+            <product_remark></product_remark>
+        </product_info>
+    </order_product>
+</main_message>
+</data>
+
+
+        <!-- 添加/删除购物车返回-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+</main_message>
+</data>
+
+
+        <!-- 购物车列表请求-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+</head_message>
+<main_message>
+    <page_size></page_size>
+    <page_num></page_num>
+</main_message>
+</data>
+
+
+        <!-- 购物车列表请求返回-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <order_product>
+        <product_info> <!-- 多个产品，自行添加-->
+            <product_id></product_id>
+            <product_num></product_num>
+            <product_sale></product_sale>
+            <product_amt></product_amt>
+            <product_remark></product_remark>
+        </product_info>
+    </order_product>
+</main_message>
+</data>
+
+</delete>
+
+        <!-- 订单返回数据-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <order_id></order_id>
+</main_message>
+</data>
+
+
+        <!-- 订单操作数据-->
+<data>
+<head_message>
+    <message_no>String</message_no>
+    <!-- 序号-->
+    <app_no>String</app_no>
+    <!-- APP版本号-->
+    <data_no>String</data_no>
+    <!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time>
+    <!-- 请求时间-->
+    <business_code>String</business_code>
+    <!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <order_id></order_id>
+    <order_type></order_type><!-- 0 删除 1 提交-->
+</main_message>
+</data>
+
+

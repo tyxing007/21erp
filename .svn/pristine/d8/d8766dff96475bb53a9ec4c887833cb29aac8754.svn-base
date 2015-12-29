@@ -1,0 +1,17 @@
+package net.loyin.netService.vo.productVo;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
+/**
+ * Created by Chao on 2015/12/8.
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+public class ProductPic {
+
+    @XmlElement(name = "pic")
+    private String pic;
+
+
+}

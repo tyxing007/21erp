@@ -1,0 +1,6 @@
+<#include "../../inc/layout.html">
+<@layout title="¿Í»§" js="crm/customer/viewPic.js">
+<div class="manage-wrapper" ms-controller="viewPic">
+<div id="pic"></div>
+</div>
+</@layout>

@@ -1,0 +1,93 @@
+<#include "../../inc/layout.html">
+<@layout title="创建公司" js="sso/company/edit.js">
+<div class="wrapper" ms-controller="createCompany">
+    <div class="manage-wrap">
+        <form action="" id="base_form">
+            <div style="padding-top:5px;">
+                <ul class="mod-form-rows base-form">
+                    <li class="row-item">
+                        <div class="label-wrap"><label>公司名称</label><font color="red">*</font></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" ms-duplex="data.name" id="name"
+                                                     data-rule="required" maxlength="20" placeholder="请输入公司名称"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="code">公司编号</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" ms-duplex="data.code" id="code"
+                                                     placeholder="自动生成" maxlength="20" readonly="readonly"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="short_name">公司简称</label><font color="red">*</font></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" ms-duplex="data.short_name"
+                                                     id="short_name"
+                                                     data-rule="required" maxlength="20" placeholder="请输入公司简称"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="industry">行业</label><font color="red">*</font></div>
+                        <div class="ctn-wrap">
+                            <select ms-duplex="data.industry" id="industry" class="ui-input" data-rule="required" placeholder="请选择行业">
+                                <option ms-repeat="parameList[3]" ms-value="el.id">{{el.name}}</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">固话</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" ms-duplex="data.telephone"
+                                                     id="telephone" data-rule="tel" placeholder="请输入固话号码"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">传真</label></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" id="fax" data-rule="fax"
+                                                     ms-duplex="data.fax" placeholder="请输入传真号码"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="telephone">地区</label><font color="red">*</font>
+                        </div>
+                        <div class="ctn-wrap">
+                            <select style="width:80px" class="ui-input" ms-duplex="data.province" data-rule="required"
+                                    id="province" ms-change="changeCity(this.value)">
+                                <option value="">省份</option>
+                                <option ms-repeat="provinceList" ms-value="el.id">{{el.name}}</option>
+                            </select>
+
+                            <select style="width:80px" class="ui-input" data-rule="required" id="city"
+                                    ms-duplex="data.city">
+                                <option value="">地市</option>
+                                <option ms-repeat="cityList" ms-value="el.id">{{el.name}}</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="reg_email">邮箱</label><font color="red">*</font></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" ms-duplex="data.reg_email"
+                                                     id="reg_email" data-rule="email;required" placeholder="请输入正确的邮箱"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label for="address">地址</label><font color="red">*</font></div>
+                        <div class="ctn-wrap"><input type="text" class="ui-input" ms-duplex="data.address" id="address" data-rule="required"
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>失效日期:</label><font color="red">*</font></div>
+                        <div class="ctn-wrap"><input type="text" ms-duplex="data.expiry_date" id="expiry_date" data-rule="required" placeholder="请输入失效日期"
+                                                     class="ui-input ui-datepicker-input"></div>
+                    </li>
+                    <li class="row-item">
+                        <div class="label-wrap"><label>注册日期:</label></div>
+                        <div class="ctn-wrap"><input type="text" ms-duplex="data.reg_date" id="reg_date"
+                                                     class="ui-input ui-datepicker-input" placeholder="自动生成" disabled>
+                        </div>
+                    </li>
+
+
+                </ul>
+                <ul class="mod-form-rows">
+                    <li class="row-item pb0">
+                        <div class="label-wrap"><label for="remark">备注</label></div>
+                        <div class="ctn-wrap"><textarea ms-duplex="data.remark" id="remark" class="ui-input"
+                                                        placeholder="添加备注信息"></textarea></div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+</@layout>

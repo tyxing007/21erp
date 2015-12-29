@@ -1,0 +1,111 @@
+<#include "../../inc/layout.html">
+<@layout title="盘点" js="scm/stockCheck/edit.js">
+<style>
+body{background: #fff;}
+#prodcutTable .ui-input{width:100%;}
+.comboDiv{position:absolute;left:94px;}
+.comboDiv ul li{margin:2px; }
+.table .comboDiv{position:absolute;left:133px;}
+.table tbody tr td{padding:0px;}
+.table tbody tr td .ui-input{width:100%;height:34px;}
+.table tbody tr .tdPd{padding:8px;}
+.table1 td{padding:2px;}
+</style>
+<div class="manage-wrapper" ms-controller="ctrl" style="overflow: scroll;overflow-x: hidden;height: 100%;width:99%">
+    <div class="manage-wrap">
+    	<form action=""id="base_form">
+    				<table style="width:100%;" class="table1">
+    				<tr>
+    					<td width="100px" align="right">仓库：</td>
+    					<td width="20%">
+    					<select ms-duplex="data.depot_id" ms-change="changBsSuggest()" class="ui-input" style="width:100px" data-msg="调出仓库必选" data-rule="required">
+    						<option ms-repeat="depotList" ms-value="el.id">{{el.name}}</option>
+    					</select>
+    					</td>
+    					<td width="100px" align="right">单据日期：</td>
+    					<td width="20%"><input id="sign_date" class="ui-input ui-datepicker-input" style="width:100px;" ms-duplex="data.bill_date" data-msg="单据日期" data-rule="required;"></td>
+    					<td width="100px;" align="right">单据编号：</td>
+    					<td width="20%">{{data.billsn}}</td>
+    				</tr>
+    				<tr>
+    					<td align="right">负责人：</td>
+    					<td><select ms-duplex="data.head_id" class="ui-input" style="width:220px;" data-rule="required" data-msg="请选择负责人">
+    					<option></option>
+    					<option ms-repeat="userList" ms-value="el.id">{{el.realname}}({{el.department_name}}-{{el.position_name}})</option>
+    				</select></td>
+    				</tr>
+    				</table>
+    		</ul>
+    		<br>
+
+            <ul class="ul-inline">
+                <li>
+                    <div class="row">
+                        <div class="input-group" style="padding-left: 20px;">
+                            <label>条码:</label>
+                            <input type="hidden" ms-duplex="query.keyBar" class="ui-input" id="barCodeCheck">
+                            <input type="text" ms-duplex="query.keyName" class="ui-input" id="productNameCheck">
+                            <label>数量:</label>
+                            <input type="text" ms-duplex="query.keynum" class="ui-input" value="" id="keynum"
+                                   placeholder="请输入数量">
+                            <label>单位:</label>
+                            <select ms-duplex="data.comparison" ms-change="changeUnit(this.value)" class="ui-input" style="width: auto" id="comparison">
+                                <option ms-repeat="comparison" ms-value="el.comparison_num">{{el.comparison_unit}}
+                                </option>
+                            </select>
+                            <a class="ui-btn" id="okIndex">添加</a>
+                            <a class="ui-btn" id="search" title="选择产品"><i class="fa fa-search"></i></a>
+                            <label for="model" style="vertical-align:middle;"><input onchange="changeModel(this)" type="checkbox" style="vertical-align:middle;" value="" id="model">条码枪模式</label>
+                            <div class="input-group-btn" ms-if="showBsSuggest == true">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right" style="left:auto" role="menu">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+
+
+
+    		<table class="table table-hover table-striped table_thead_fixed table-bordered table-condensed" id="prodcutTable">
+  				<thead>
+  					<tr>
+  						<th width="50px">行号</th>
+  						<th width="50px">操作</th>
+                        <th>条形码</th>
+  						<th>商品</th>
+  						<th width="55px">单位</th>
+  						<th>系统库存</th>
+  						<th>实际库存</th>
+  						<th>盈亏</th>
+  					</tr>
+  				</thead>
+  				<tbody style="max-height:400px;">
+  					<tr ms-repeat="data.productlist">
+  						<td width="50px" class="tdPd">{{$index+1}}</td>
+  						<td width="50px" class="tdPd"><nobr></i><i class="fa fa-trash mrb" ms-click="delRow" title="移除"></i></nobr></td>
+                        <td class="tdPd">{{el.billsn}}</td>
+                        <td class="tdPd">{{el.product_name}}</td>
+	          			<td class="tdPd">{{el.unit|custParame}}</td>
+  						<td class="tdPd">{{el.amount}}</td>
+  						<td><input class="ui-input" ms-attr-id="id3{{$index}}"data-rule="required;number" ms-duplex="el.amount2" data-msg="实际库存必填且为数字！"></td>
+  						<td class="tdPd" ms-class-red="el.amount2-el.amount<0" ms-class-green="el.amount2-el.amount>0">{{el.amount2-el.amount}}</td>
+  					</tr>
+  				</tbody>
+    		</table>
+    		<div>
+	           <p>
+				 备注：
+	           <br>
+	           <textarea ms-duplex="data.remark" id="remark" class="ui-input" style="height:100px;width:100%;"></textarea>
+	           </p>
+       		</div>
+    	</form>
+    </div>
+</div>
+</@layout>

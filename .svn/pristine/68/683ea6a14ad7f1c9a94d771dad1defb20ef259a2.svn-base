@@ -1,0 +1,30 @@
+<#include "../../inc/layout.html">
+<@layout title="仓库" js="scm/product/upfile.js">
+<div class="manage-wrapper" ms-controller="ctrl">
+    <div class="manage-wrap">
+        <ul class="ul-inline">
+
+            <li class="row-item" ms-if="showMenu('A12_1_S')">
+                <div class="ctn-wrap">
+                    <label for="">请选择要显示的公司</label>
+                    <select ms-duplex="data.companyId" class="ui-input" ms-change="changeCompany(this.value)" style="width: auto">
+                        <option ms-repeat="companyList" ms-value="el.id">{{el.name}}</option>
+                    </select>
+                </div>
+            </li>
+
+        </ul>
+    		<ul class="mod-form-rows base-form" >
+    			<li class="row-item odd">
+					点击<a href="${root!}/excel/商品数据导入.xls">这里</a>下载导入模板
+    			</li>
+    		</ul>
+    		<ul class="mod-form-rows">
+    			<li class="row-item pb0">
+    				<div class="label-wrap"><label>文件(请上传小于512KB的文件，否则无法上传，若数据量过量，等待时间将会延长)</label></div>
+    				<div class="ctn-wrap"><span id="upfile_btn"></span></div>
+    			</li>
+    		</ul>
+    </div>
+</div>
+</@layout>

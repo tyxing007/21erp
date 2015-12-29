@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- 出差/请假列表请求-->
+<data>
+    <head_message>
+        <message_no>String</message_no><!-- 序号-->
+        <app_no>String</app_no><!-- APP版本号-->
+        <data_no>String</data_no><!-- 数据结构版本号-->
+        <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+        <business_code>String</business_code><!-- 业务编号-->
+    </head_message>
+    <main_message>
+        <attendance_type></attendance_type> <!-- 0为出差 1为请假-->
+        <search_start_time></search_start_time>
+        <search_end_time></search_end_time>
+        <page_size></page_size>
+        <page_num></page_num>
+    </main_message>
+</data>
+
+<!--   出差/请假列表 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <attendance_type></attendance_type> <!-- 0为出差 1为请假-->
+    <attendance_info>
+        <attendance> <!-- 可自行创建，有多个时创建多个 -->
+            <attendance_genre></attendance_genre>
+            <attendance_time></attendance_time>
+            <attendance_status></attendance_status>
+            <attendance_startTime></attendance_startTime>
+            <attendance_endTime></attendance_endTime>
+            <attendance_remark></attendance_remark>
+        </attendance>
+    </attendance_info>
+</main_message>
+</data>
+
+        <!--   出差/请假添加 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <attendance_type></attendance_type> <!-- 0为出差 1为请假-->
+    <attendance_genre></attendance_genre> <!-- 事假/周报/等-->
+    <attendance_remark></attendance_remark>
+    <attendance_startTime></attendance_startTime>
+    <attendance_endTime></attendance_endTime>
+    <attendance_reviewer></attendance_reviewer>
+</main_message>
+</data>
+
+
+<!-- 出差/请假添加返回-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <attendance_id></attendance_id> <!-- 0为出差 1为请假-->
+</main_message>
+</data>
+
+
+<!-- 写到这里-->
+
+
+<!-- 报告列表请求(日/周/月年) -->
+<data>
+    <head_message>
+        <message_no>String</message_no><!-- 序号-->
+        <app_no>String</app_no><!-- APP版本号-->
+        <data_no>String</data_no><!-- 数据结构版本号-->
+        <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+        <business_code>String</business_code><!-- 业务编号-->
+    </head_message>
+    <main_message>
+        <report_page></report_page>
+        <report_pageSize></report_pageSize>
+        <report_sort></report_sort> <!-- 0为默认/1为正序/2为倒序-->
+        <report_type></report_type><!-- 根据web端规定类型-->
+        <report_sort_time></report_sort_time>
+        <seacrch_title></seacrch_title>
+    </main_message>
+</data>
+
+
+
+        <!-- 报告列表请求返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <report_info>
+        <report><!-- 可自行添加-->
+            <report_id></report_id>
+            <report_title></report_title>
+            <report_time></report_time>
+            <report_count></report_count>
+            <report_money></report_money>
+        </report>
+    </report_info>
+</main_message>
+</data>
+
+        <!-- 报告详情请求 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <report_id></report_id>
+</main_message>
+</data>
+
+
+        <!-- 报告详情请求返回 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+    <report_title></report_title>
+    <report_time></report_time>
+    <report_type></report_type>
+    <report_count></report_count>
+    <report_money></report_money>
+    <report_visit_count></report_visit_count>
+    <report_add_count></report_add_count>
+    <report_summarize></report_summarize>
+    <report_plan></report_plan>
+    <report_leader></report_leader>
+</main_message>
+</data>
+
+
+        <!-- 报告添加 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <report_title></report_title>
+    <report_time></report_time>
+    <report_type></report_type>
+    <report_count></report_count>
+    <report_money></report_money>
+    <report_visit_count></report_visit_count>
+    <report_add_count></report_add_count>
+    <report_summarize></report_summarize>
+    <report_plan></report_plan>
+    <report_leader></report_leader>
+</main_message>
+</data>
+
+<!-- 报告保存请求返回-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+</main_message>
+</data>
+
+
+
+
+
+
+
+        <!-- 签到请求 -->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+</head_message>
+<main_message>
+    <check_type></check_type> <!-- 签到签退 in为签到 out为签退-->
+    <check_lng></check_lng> <!-- 签到经度-->
+    <check_lat></check_lat><!-- 签到维度-->
+    <check_time></check_time><!-- 签到时间-->
+    <check_remark></check_remark><!-- 签到备注-->
+</main_message>
+</data>
+
+<!-- 签到请求返回-->
+<data>
+<head_message>
+    <message_no>String</message_no><!-- 序号-->
+    <app_no>String</app_no><!-- APP版本号-->
+    <data_no>String</data_no><!-- 数据结构版本号-->
+    <request_time>String(YYYY-MM-DD HH:mm:ss)</request_time><!-- 请求时间-->
+    <business_code>String</business_code><!-- 业务编号-->
+    <request_succes></request_succes>
+    <request_msg></request_msg>
+</head_message>
+<main_message>
+</main_message>
+</data>
+
+
+
+
+
+
+
+
+
+
